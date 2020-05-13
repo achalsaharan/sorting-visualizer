@@ -3,8 +3,7 @@ const bSortBtn = document.getElementById('bsort');
 const mSortBtn = document.getElementById('msort');
 const sizeElement = document.getElementById('size');
 //const speedElement = document.getElementById('speed');
-
-
+const SPEED = 40; // change this to vary execution speed of the sorting techniques
 
 
 let number = 50
@@ -28,13 +27,21 @@ sizeElement.oninput = function() {
 }
 
 
-let speed = 40;
+// let speed = 40;  
 // speedElement.oninput = function() {
 //     speed = 1001 - this.value;
 //     //console.log(speed); 
 // }
 
 
+//inatilizing the animations array
+let animations = [];
+//function to reset animations array
+function resetAnimations(){
+    animations = [];
+}
+
+//function to create the number divs
 function createNumbers (k){
     for(let i=0 ;i<k; i++){
         let div = document.createElement('div');  //creating a div element
@@ -66,11 +73,11 @@ const bubbleSort = async() => {
                 area.children[j+1].style.height = placeholder;
                 area.children[j+1].style.backgroundColor = '#ffbf00';
                 area.children[j].style.backgroundColor = '#57a0d3';
-                await sleep(speed);
+                await sleep(SPEED);
             }else{
                 area.children[j].style.backgroundColor = '#57a0d3';
                 area.children[j+1].style.backgroundColor = '#ffbf00';
-                await sleep(speed);
+                await sleep(SPEED);
             }
         }
         area.children[number-i-1].style.backgroundColor = 'green';
@@ -89,14 +96,8 @@ const sleep = (milliseconds) => {
 // creating the numbers for the first time when the page loads
 createNumbers(number);
 
-arr = [2,10,4,8,6,0,34,1,1,2,1];
 
-let animations = [];
-function resetAnimations(){
-    animations = [];
-}
-
-
+// merge sort helper function to merge to sorted arrays
 function merge(l, m, r){
     let i,j,k;
     let left = [];
@@ -156,6 +157,7 @@ function merge(l, m, r){
     }
 }
 
+// merge sort
 function mergeSort(l,r){
     if(l<r){
         let mid = Math.floor((l+r)/2);
@@ -165,7 +167,7 @@ function mergeSort(l,r){
     }
 }
 
-// to test setTimeout() function
+// to color the elements green when finally sorted
 function color(){
     for(let i=0; i<area.childElementCount; i++){
         area.children[i].style.backgroundColor = 'green';
@@ -179,24 +181,24 @@ function animate(){
             let h = animations[i].height;
             area.children[idx].style.height = h;
             area.children[idx].style.backgroundColor = '#57a0d3';
-        }, i*speed);
+        }, i*SPEED);
     }
     setTimeout(()=>{
         color();
-    }, speed*animations.length);
+    }, SPEED*animations.length);
 }
 
-//mergeSort(0, area.childElementCount - 1);
-mSortBtn.addEventListener('click', () => { //cant we pass direct arguments in event listeners
+
+// Adding event listeners on the buttons
+mSortBtn.addEventListener('click', () => {
     resetDummy();
     resetAnimations();
     mergeSort(0, area.childElementCount - 1);
-    //console.table(animations);
     animate();
     
 });
 
-bSortBtn.addEventListener('click', () => { //cant we pass direct arguments in event listeners
+bSortBtn.addEventListener('click', () => {
     bubbleSort();
 });
 
