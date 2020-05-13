@@ -1,0 +1,153 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page-heading{
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    background-color: #2a2a2a;
+}
+
+.page-heading h1{
+    margin: 0 auto;
+    color: #fff
+}
+
+.control-panel{
+    display: flex;
+    height: 6vh;
+    background-color: #444;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.control-panel button{
+    padding: 0.2rem;
+    border-radius: 3px;
+    background-color: coral;
+    border: none;
+}
+
+.container{
+    display: flex;
+    height:78vh;
+    background-color: #2a2a2a;
+}
+
+.len-container{
+    display: flex;
+    width: 70vw;
+    /* min-width: 310px; */
+    /* max-width: 800px; */
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 78vh;
+    margin: 0 auto;
+    background-color: #2a2a2a;
+    justify-content: space-around;
+}
+
+.number{
+    background-color: coral;
+    width: 1px;
+}
+
+.slidecontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slidecontainer p{
+    padding-top: 5px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+   }
+   
+input[type="range"]:focus {
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: coral;
+    height: 3px;
+
+   }
+   
+input[type="range"]::-moz-range-track {
+    background: coral;
+    height: 3px;
+
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: #272727;
+    margin-top: -5px;
+    border-radius: 50%;
+}
+   
+input[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background: pink;
+    margin-top: -5px;
+    border-radius: 50%;
+}
+
+button:focus, input[type="button"]:focus {
+    outline: none;
+}
+
+.links-container{
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+    align-items: center;
+    background-color: #444;
+    justify-content: center;
+
+}
+
+.links-container a{
+    color: #ddd;
+}
+
+.source-btn{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.1rem 0.3rem;
+    background-color: #ddd;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.source-btn img{
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 5px;
+    margin-left: 6px;
+}
+.source-btn span{
+    color: #111;
+    margin-right: 6px;
+}
+
+.developer{
+    margin-top: 0.3rem;
+}
+
+
+@media all and (max-width: 450px){
+    .len-container{
+        width: 100vw;
+    }
+}

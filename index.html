@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>sorting visualizer</title>
+</head>
+<body>
+    <div class="page-heading">
+        <h1>SORTED</h1>
+    </div>
+    <div class="control-panel">
+        <button id="bsort">Bubble Sort</button>
+        <button id="msort">Merge Sort</button>
+        <button type="button" onClick="window.location.reload();">Reset</button>
+        <div class="slidecontainer">
+            <input type="range" min="1" max="150" value="50" class="slider" id="size">
+            <!-- <p>input size</p> -->
+        </div>
+        <!-- <div class="slidecontainer">
+            <input type="range" min="1" max="1000" value="500" class="slider" id="speed">
+            speed
+        </div> -->
+    </div>
+    <div class="container">
+        <div class="len-container" id="area">
+        </div>
+    </div>
+    <div class='links-container'>
+        <a class='source-btn' href="https://www.github.com/" target="_blank">
+            <img src="GitHub-Mark-120px-plus.png">
+            <span>Source</span>
+        </a>
+        <div class="developer">Developed by Achal Saharan</div>
+    </div>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
